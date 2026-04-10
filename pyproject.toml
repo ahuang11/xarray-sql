@@ -54,11 +54,13 @@ module-name = "xarray_sql._native"
 [tool.setuptools.packages.find]
 exclude = ["demo", "perf_tests"]
 
-[tool.pyink]
+[tool.ruff]
 line-length = 80
+indent-width = 4
+
+[tool.ruff.format]
 preview = true
-pyink-indentation = 2
-pyink-use-majority-quotes = true
+quote-style = "preserve"  # preserves majority-quote behavior (single or double)
 
 [tool.mypy]
 python_version = "3.11"
@@ -87,7 +89,7 @@ ignore_missing_imports = true
 dev = [
     "xarray_sql[test]",
     "py-spy>=0.4.0",
-    "pyink>=24.10.1",
+    "ruff>=0.15.10",
     "maturin>=1.9.1",
 ]
 
